@@ -11,12 +11,14 @@ TODO: what is this document about
 - [3. Declarative development environment](#3-declarative-development-environment)
 - [4. Reproducible CI](#4-reproducible-ci)
 - [5. Better docker images](#5-better-docker-images)
-- [6. Sbt + Nix](#6-sbt-nix)
+- [6. Sbt + Nix](#6-sbt--nix)
 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/garbas/sbtb-examples)
 
 ## 1. Why Nix?
+
+https://5faaaa3a0bd16cebfe335758--nixos-homepage.netlify.app/overview.html
 
 ## 2. Developmnent shell
 
