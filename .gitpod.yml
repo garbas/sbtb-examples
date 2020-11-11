@@ -1,8 +1,5 @@
 image:
-  file: Dockerfile
-
-tasks:
-  - 
+  file: .gitpod.Dockerfile
 
 vscode:
   extensions:
