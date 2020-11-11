@@ -1,4 +1,8 @@
-image: nixos/nix
+image:
+  file: Dockerfile
+
+tasks:
+  - 
 
 vscode:
   extensions:
