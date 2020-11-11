@@ -1,1 +1,5 @@
 image: nixos/nix
+
+vscode:
+  extensions:
+    - jnoortheen.nix-ide@0.1.3:ktd+weA1+YmzUARN482ZjA==
