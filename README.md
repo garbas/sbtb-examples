@@ -18,14 +18,50 @@ TODO: what is this document about
 
 ## 1. Why Nix?
 
-https://5faaaa3a0bd16cebfe335758--nixos-homepage.netlify.app/overview.html
+[Why Nix?](https://5fad2bd6b3d38100bedd3ba8--nixos-homepage.netlify.app/overview.html)
+
+## 2. Install Nix
+
+```
+$ curl -L https://nixos.org/nix/install | sh
+```
 
 ## 2. Developmnent shell
 
+$ nix-shell -p scala sbt
+
 ## 3. Declarative development environment
+
+$ cat shell.nix
+{ pkgs ? import <nixpkgs> {}
+}:
+pkgs.mkShell {
+    buildInputs =
+      [ pkgs.scala
+        pkgs.sbt
+      ];
+}
+$ nix-shell
+$ nix-shell --command "scala"
 
 ## 4. Reproducible CI
 
+nix-shell --command "sbt clean compile test"
+
 ## 5. Better docker images
 
+$ cat docker.nix
+{ pkgs ? import <nixpkgs> {}
+}:
+pkgs.dockerTools.buildLayeredImage {
+    name = "nix-scala";
+    tag = "latest";
+    contents =
+      [ pkgs.scala
+        pkgs.sbt
+      ];
+}
+
 ## 6. Sbt + Nix
+
+$ cat default.nix
