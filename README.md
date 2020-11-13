@@ -28,28 +28,34 @@ $ curl -L https://nixos.org/nix/install | sh
 
 ## 2. Developmnent shell
 
+```
 $ nix-shell -p scala sbt
+```
 
 ## 3. Declarative development environment
 
+```
 $ cat shell.nix
 { pkgs ? import <nixpkgs> {}
 }:
 pkgs.mkShell {
     buildInputs =
-      [ pkgs.scala
-        pkgs.sbt
+      [ pkgs.sbt
       ];
 }
 $ nix-shell
 $ nix-shell --command "scala"
+```
 
 ## 4. Reproducible CI
 
-nix-shell --command "sbt clean compile test"
+```
+$ nix-shell --command "sbt clean compile test"
+```
 
 ## 5. Better docker images
 
+```
 $ cat docker.nix
 { pkgs ? import <nixpkgs> {}
 }:
@@ -57,11 +63,15 @@ pkgs.dockerTools.buildLayeredImage {
     name = "nix-scala";
     tag = "latest";
     contents =
-      [ pkgs.scala
-        pkgs.sbt
+      [ pkgs.sbt
       ];
 }
+```
 
 ## 6. Sbt + Nix
 
-$ cat default.nix
+```
+$ mkdir demo
+$ cd demo
+$ sbt new gvolpe/sbt-nix.g8
+```
